@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>three.js小案例</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+  </style>
+  <!--引入three.js-->
+  
+</head>
+
+<body>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./node_modules/three/build/three.module.js",
+        "three/": "./node_modules/three/"
+      }
+    }
+  </script>
+  <script type="module">
+    import { Game } from './ts/index.js';
+
+    new Game()
+  </script>
+</body>
+
+</html>
