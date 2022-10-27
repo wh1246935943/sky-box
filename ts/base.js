@@ -28,16 +28,16 @@ export class Base {
         /**
          * 初始化相机
          */
-        const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
-        camera.position.set(-100, 100, 100); //设置相机位置
+        const camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 1, 800);
+        camera.position.set(-400, 700, 700); //设置相机位置
         camera.lookAt(scene.position);
         /**
          * 初始化相机插件
          */
         const controls = new OrbitControls(camera, renderer.domElement);
-        controls.maxDistance = 100;
+        controls.maxDistance = 600;
         controls.minDistance = 40;
-        // controls.enableDamping = true;// 使动画循环使用时阻尼或自转 意思是否有惯性 
+        controls.enableDamping = true; // 使动画循环使用时阻尼或自转 意思是否有惯性 
         // controls.enableZoom = true;//是否可以缩放 
         // // controls.autoRotate = true;//是否自动旋转 
         // controls.enablePan = true;//是否开启右键拖拽
@@ -48,9 +48,8 @@ export class Base {
         this.initLight();
         this.animate();
         this.realTimeUpdateWindowSize();
-        // this.render()
+        // this.initObject()
         setTimeout(() => {
-            this.initObject();
         }, 0);
     }
     ;
