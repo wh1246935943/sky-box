@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import { CatmullRomCurve3 } from 'three';
 
 import { Base } from "./base.js";
 
@@ -20,7 +19,7 @@ export class Game extends Base{
     /**
      * 创建几何体
      */
-    const map = new THREE.TextureLoader().load('./../img/dimian.png');
+    const map = new THREE.TextureLoader().load('./../img/di.png');
     const mesh = new THREE.Mesh(
       new THREE.BoxGeometry(150, 5, 200),
       new THREE.MeshLambertMaterial({ map })

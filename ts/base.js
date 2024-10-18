@@ -21,14 +21,14 @@ export class Base {
          * 设置场景背景
          */
         const scene = new THREE.Scene();
-        const urls = [6, 3, 2, 1, 5, 4].map((url) => {
-            return `./img/${url}.png`;
+        const urls = [1, 3, 5, 6, 4, 2].map((url) => {
+            return `./img/${url}.jpg`;
         });
         scene.background = new THREE.CubeTextureLoader().load(urls);
         /**
          * 初始化相机
          */
-        const camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 1, 800);
+        const camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 1, 800);
         camera.position.set(-400, 700, 700); //设置相机位置
         camera.lookAt(scene.position);
         /**
@@ -38,9 +38,9 @@ export class Base {
         controls.maxDistance = 600;
         controls.minDistance = 40;
         controls.enableDamping = true; // 使动画循环使用时阻尼或自转 意思是否有惯性 
-        // controls.enableZoom = true;//是否可以缩放 
-        // // controls.autoRotate = true;//是否自动旋转 
-        // controls.enablePan = true;//是否开启右键拖拽
+        controls.enableZoom = true; //是否可以缩放 
+        controls.autoRotate = false; //是否自动旋转 
+        controls.enablePan = true; //是否开启右键拖拽
         this.renderer = renderer;
         this.controls = controls;
         this.scene = scene;
